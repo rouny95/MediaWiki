@@ -1,0 +1,6 @@
+framework module Pods_MediaWiki {
+  umbrella header "Pods-MediaWiki-umbrella.h"
+
+  export *
+  module * { export * }
+}

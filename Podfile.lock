@@ -1,0 +1,26 @@
+PODS:
+  - Alamofire (4.8.0)
+  - Nuke (7.4.2)
+  - Nuke-Alamofire-Plugin (4.0):
+    - Alamofire (~> 4.0)
+    - Nuke (~> 7.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.0)
+  - Nuke (~> 7.4.1)
+  - Nuke-Alamofire-Plugin
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Nuke
+    - Nuke-Alamofire-Plugin
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  Nuke: aee5c42001369902798f7b844611b8ae930ce333
+  Nuke-Alamofire-Plugin: 58319cafeaf6b4ea7431e48189de4618759a2c3c
+
+PODFILE CHECKSUM: 6c99c088ed447da6971195e5dee2693b28446a4f
+
+COCOAPODS: 1.5.3
