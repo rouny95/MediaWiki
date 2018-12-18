@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8700B1C721C954DA000E5365 /* WikiSearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700B1C621C954DA000E5365 /* WikiSearchResultTableViewCell.swift */; };
+		8700B1C921C959E9000E5365 /* WikiDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8700B1C821C959E9000E5365 /* WikiDetailPageViewController.swift */; };
 		871780E821C7FAA300DCC5D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 871780E721C7FAA300DCC5D2 /* AppDelegate.swift */; };
 		871780ED21C7FAA300DCC5D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871780EB21C7FAA300DCC5D2 /* Main.storyboard */; };
 		871780F021C7FAA300DCC5D2 /* MediaWiki.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 871780EE21C7FAA300DCC5D2 /* MediaWiki.xcdatamodeld */; };
 		871780F221C7FAA500DCC5D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 871780F121C7FAA500DCC5D2 /* Assets.xcassets */; };
 		871780F521C7FAA500DCC5D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 871780F321C7FAA500DCC5D2 /* LaunchScreen.storyboard */; };
 		8717810A21C8081300DCC5D2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717810921C8081300DCC5D2 /* SplashViewController.swift */; };
+		8717810C21C80BC400DCC5D2 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717810B21C80BC400DCC5D2 /* ApiManager.swift */; };
+		8717810E21C80CB500DCC5D2 /* WikiSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717810D21C80CB500DCC5D2 /* WikiSearchViewController.swift */; };
+		8717811621C81B9A00DCC5D2 /* WikiSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */; };
 		8B0E5062C4D047BD36A595C4 /* Pods_MediaWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641E0C3C6078FA9DA83D8FD /* Pods_MediaWiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,6 +25,8 @@
 		4ED95CE48337EC72BEAA90F8 /* Pods-MediaWiki.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaWiki.release.xcconfig"; path = "Pods/Target Support Files/Pods-MediaWiki/Pods-MediaWiki.release.xcconfig"; sourceTree = "<group>"; };
 		5641E0C3C6078FA9DA83D8FD /* Pods_MediaWiki.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MediaWiki.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8498A32992CF2DA2162B1948 /* Pods-MediaWiki.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MediaWiki.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MediaWiki/Pods-MediaWiki.debug.xcconfig"; sourceTree = "<group>"; };
+		8700B1C621C954DA000E5365 /* WikiSearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		8700B1C821C959E9000E5365 /* WikiDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiDetailPageViewController.swift; sourceTree = "<group>"; };
 		871780E421C7FAA300DCC5D2 /* MediaWiki.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MediaWiki.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		871780E721C7FAA300DCC5D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		871780EC21C7FAA300DCC5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -28,6 +35,9 @@
 		871780F421C7FAA500DCC5D2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		871780F621C7FAA500DCC5D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8717810921C8081300DCC5D2 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		8717810B21C80BC400DCC5D2 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		8717810D21C80CB500DCC5D2 /* WikiSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchViewController.swift; sourceTree = "<group>"; };
+		8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,9 @@
 		8717810321C8068400DCC5D2 /* Wiki */ = {
 			isa = PBXGroup;
 			children = (
+				8717810D21C80CB500DCC5D2 /* WikiSearchViewController.swift */,
+				8700B1C621C954DA000E5365 /* WikiSearchResultTableViewCell.swift */,
+				8700B1C821C959E9000E5365 /* WikiDetailPageViewController.swift */,
 			);
 			path = Wiki;
 			sourceTree = "<group>";
@@ -112,6 +125,7 @@
 		8717810621C806FD00DCC5D2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -127,6 +141,7 @@
 		8717810821C8072600DCC5D2 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8717810B21C80BC400DCC5D2 /* ApiManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -264,9 +279,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8700B1C921C959E9000E5365 /* WikiDetailPageViewController.swift in Sources */,
+				8717811621C81B9A00DCC5D2 /* WikiSearchResult.swift in Sources */,
+				8717810C21C80BC400DCC5D2 /* ApiManager.swift in Sources */,
 				8717810A21C8081300DCC5D2 /* SplashViewController.swift in Sources */,
 				871780F021C7FAA300DCC5D2 /* MediaWiki.xcdatamodeld in Sources */,
+				8717810E21C80CB500DCC5D2 /* WikiSearchViewController.swift in Sources */,
 				871780E821C7FAA300DCC5D2 /* AppDelegate.swift in Sources */,
+				8700B1C721C954DA000E5365 /* WikiSearchResultTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
