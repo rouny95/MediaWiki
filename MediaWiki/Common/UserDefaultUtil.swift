@@ -20,35 +20,20 @@ class UserDefaultUtil: NSObject {
     func saveUserSearchHistory(_ history: WikiSearchResult) {
         
         let userDefault = UserDefaults.standard
-        // let savedHistory = userDefault.object(forKey: "mediWikiSeachHistory") as? Data
-        
-        //        if let savedHis = savedHistory {
-        //            var hsitoryArray = NSKeyedUnarchiver.unarchiveObject(with: savedHis) as? [WikiSearchResult]
-        //            hsitoryArray?.append(history)
-        //            userDefault.removeObject(forKey: "mediWikiSeachHistory")
-        //            let archivedData = NSKeyedArchiver.archivedData(withRootObject: hsitoryArray!)
-        //            userDefault.set(archivedData, forKey: "mediWikiSeachHistory")
-        //            userDefault.synchronize()
-        //        } else {
-        //            var hsitoryArray = [WikiSearchResult]()
-        //            hsitoryArray.append(history)
-        //            userDefault.removeObject(forKey: "mediWikiSeachHistory")
-        //            let archivedData = NSKeyedArchiver.archivedData(withRootObject: hsitoryArray)
-        //            userDefault.set(archivedData, forKey: "mediWikiSeachHistory")
-        //            userDefault.synchronize()
-        //        }
         
         var savedHistoryList = self.fetchUserSearchHistory()
-        if savedHistoryList.count >= 10 {
-            savedHistoryList.removeLast()
-            savedHistoryList.append(history)
-        } else {
-            savedHistoryList.append(history)
+        if (savedHistoryList.contains { $0.pageId! == history.pageId!}) == false {
+            if savedHistoryList.count >= 10 {
+                savedHistoryList.removeLast()
+                savedHistoryList.append(history)
+            } else {
+                savedHistoryList.append(history)
+            }
+            userDefault.removeObject(forKey: "mediWikiSeachHistory")
+            let archivedData = NSKeyedArchiver.archivedData(withRootObject: savedHistoryList)
+            userDefault.set(archivedData, forKey: "mediWikiSeachHistory")
+            userDefault.synchronize()
         }
-        userDefault.removeObject(forKey: "mediWikiSeachHistory")
-        let archivedData = NSKeyedArchiver.archivedData(withRootObject: savedHistoryList)
-        userDefault.set(archivedData, forKey: "mediWikiSeachHistory")
-        userDefault.synchronize()
     }
     
     func fetchUserSearchHistory() -> [WikiSearchResult] {

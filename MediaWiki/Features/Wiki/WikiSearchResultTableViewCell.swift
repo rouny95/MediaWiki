@@ -30,9 +30,16 @@ class WikiSearchResultTableViewCell: UITableViewCell {
     func setCellData(wikiSearch: WikiSearchResult) {
         self.wikiSearchTitleLabel.text = wikiSearch.title ?? ""
         self.wikiSearchDescriptionLabel.text = wikiSearch.wikieDescription ?? ""
+        self.wikiSearchImageView.image = UIImage()
         if let imageView = self.wikiSearchImageView, let _ = wikiSearch.thumbnailUrl {
             let imageUrl = URL(string: wikiSearch.thumbnailUrl!)
-            Nuke.loadImage(with: imageUrl!, into: imageView)
+            if imageUrl != nil && UIApplication.shared.canOpenURL(imageUrl!) {
+                Nuke.loadImage(with: imageUrl!, into: imageView)
+            } else {
+                self.wikiSearchImageView.image = UIImage(named: "ic_default")
+            }
+        } else {
+            self.wikiSearchImageView.image = UIImage(named: "ic_default")
         }
     }
 
