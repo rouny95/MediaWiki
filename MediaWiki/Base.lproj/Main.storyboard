@@ -51,7 +51,7 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D4K-yj-Quj">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DJb-MC-qG7">
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -64,18 +64,25 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </searchBar>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="x8E-io-qZT" secondAttribute="trailing" constant="8" id="GhV-hK-iwB"/>
                                     <constraint firstItem="x8E-io-qZT" firstAttribute="leading" secondItem="DJb-MC-qG7" secondAttribute="leading" constant="8" id="LYn-i4-I3E"/>
                                     <constraint firstAttribute="height" constant="44" id="ah8-TE-ZSF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDz-LX-dTT">
+                                <rect key="frame" x="0.0" y="88" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="EBe-ug-nJT"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-gK-R7T">
-                                <rect key="frame" x="0.0" y="96" width="375" height="682"/>
+                                <rect key="frame" x="0.0" y="97" width="375" height="681"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WU7-ad-uM8">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="682"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="681"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WikiSearchResultTableViewCell" rowHeight="90" id="o02-k9-Wl1" customClass="WikiSearchResultTableViewCell" customModule="MediaWiki" customModuleProvider="target">
@@ -155,15 +162,78 @@
                                     <constraint firstItem="WU7-ad-uM8" firstAttribute="leading" secondItem="pdT-gK-R7T" secondAttribute="leading" id="osQ-1K-dOp"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="khc-1W-xnG">
+                                <rect key="frame" x="0.0" y="97" width="375" height="681"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_wiki" translatesAutoresizingMaskIntoConstraints="NO" id="077-jH-7bu">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="UbK-sA-DZk"/>
+                                            <constraint firstAttribute="width" constant="150" id="k2E-OT-WI9"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r49-ye-1mP">
+                                        <rect key="frame" x="12" y="60" width="351" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="gxf-0X-yUW"/>
+                                        </constraints>
+                                        <mutableString key="text">Wikipedia is a multilingual, web-based, free encyclopedia based on a model of openly editable and viewable content, a wiki. It is the largest and most popular general reference work on the World Wide Web and is one of the most popular websites by Alexa rank.</mutableString>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wt2-Dq-kwS">
+                                        <rect key="frame" x="12" y="192" width="351" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="P7b-5C-bn0"/>
+                                        </constraints>
+                                        <state key="normal" title="View Your Recent Search History"/>
+                                        <connections>
+                                            <action selector="viewRcenetHistoryClicked:" destination="wMH-kM-CPe" eventType="touchUpInside" id="aKd-ca-PU7"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sorry No Search History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GG5-e3-nqB">
+                                        <rect key="frame" x="12" y="192" width="351" height="21"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="qVO-As-sbb"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="077-jH-7bu" firstAttribute="top" secondItem="khc-1W-xnG" secondAttribute="top" id="0pZ-H3-lke"/>
+                                    <constraint firstItem="GG5-e3-nqB" firstAttribute="leading" secondItem="Wt2-Dq-kwS" secondAttribute="leading" id="4Cf-w1-aaD"/>
+                                    <constraint firstItem="r49-ye-1mP" firstAttribute="top" secondItem="077-jH-7bu" secondAttribute="bottom" id="8Qo-L4-Xrf"/>
+                                    <constraint firstItem="GG5-e3-nqB" firstAttribute="trailing" secondItem="Wt2-Dq-kwS" secondAttribute="trailing" id="CZz-en-Gui"/>
+                                    <constraint firstItem="077-jH-7bu" firstAttribute="leading" secondItem="khc-1W-xnG" secondAttribute="leading" id="L6Q-HP-IFX"/>
+                                    <constraint firstAttribute="trailing" secondItem="r49-ye-1mP" secondAttribute="trailing" constant="12" id="QrY-dr-o6k"/>
+                                    <constraint firstItem="Wt2-Dq-kwS" firstAttribute="trailing" secondItem="r49-ye-1mP" secondAttribute="trailing" id="VR4-6i-jL3"/>
+                                    <constraint firstItem="Wt2-Dq-kwS" firstAttribute="top" secondItem="r49-ye-1mP" secondAttribute="bottom" constant="12" id="Xsw-Zt-bMn"/>
+                                    <constraint firstItem="r49-ye-1mP" firstAttribute="leading" secondItem="khc-1W-xnG" secondAttribute="leading" constant="12" id="qB9-Kv-Zc7"/>
+                                    <constraint firstItem="GG5-e3-nqB" firstAttribute="top" secondItem="Wt2-Dq-kwS" secondAttribute="top" id="wF3-QT-JrG"/>
+                                    <constraint firstItem="Wt2-Dq-kwS" firstAttribute="leading" secondItem="r49-ye-1mP" secondAttribute="leading" id="yHy-j9-ahL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="pdT-gK-R7T" firstAttribute="top" secondItem="D4K-yj-Quj" secondAttribute="bottom" constant="8" id="G84-d9-0SJ"/>
+                            <constraint firstItem="khc-1W-xnG" firstAttribute="top" secondItem="pdT-gK-R7T" secondAttribute="top" id="5mW-b8-346"/>
+                            <constraint firstItem="khc-1W-xnG" firstAttribute="trailing" secondItem="pdT-gK-R7T" secondAttribute="trailing" id="BDe-iI-FXL"/>
+                            <constraint firstItem="pdT-gK-R7T" firstAttribute="top" secondItem="DDz-LX-dTT" secondAttribute="bottom" constant="8" id="GDc-Tj-8f4"/>
+                            <constraint firstItem="khc-1W-xnG" firstAttribute="bottom" secondItem="pdT-gK-R7T" secondAttribute="bottom" id="Glb-Ha-wyN"/>
                             <constraint firstItem="D4K-yj-Quj" firstAttribute="top" secondItem="ygN-zd-jeP" secondAttribute="top" id="IKY-pb-SK9"/>
+                            <constraint firstItem="DDz-LX-dTT" firstAttribute="top" secondItem="D4K-yj-Quj" secondAttribute="bottom" id="NEw-3m-Dyn"/>
                             <constraint firstItem="D4K-yj-Quj" firstAttribute="bottom" secondItem="DJb-MC-qG7" secondAttribute="bottom" id="REP-he-Bus"/>
                             <constraint firstItem="Cga-qb-yk4" firstAttribute="trailing" secondItem="pdT-gK-R7T" secondAttribute="trailing" id="Vng-uu-9iN"/>
+                            <constraint firstItem="DDz-LX-dTT" firstAttribute="leading" secondItem="Cga-qb-yk4" secondAttribute="leading" id="Z88-rH-uMS"/>
+                            <constraint firstItem="khc-1W-xnG" firstAttribute="leading" secondItem="pdT-gK-R7T" secondAttribute="leading" id="ask-ta-dKZ"/>
                             <constraint firstItem="Cga-qb-yk4" firstAttribute="bottom" secondItem="pdT-gK-R7T" secondAttribute="bottom" id="ayt-cR-lvI"/>
                             <constraint firstItem="D4K-yj-Quj" firstAttribute="leading" secondItem="Cga-qb-yk4" secondAttribute="leading" id="deC-f7-iZH"/>
+                            <constraint firstItem="Cga-qb-yk4" firstAttribute="trailing" secondItem="DDz-LX-dTT" secondAttribute="trailing" id="dfu-be-8OQ"/>
                             <constraint firstItem="Cga-qb-yk4" firstAttribute="trailing" secondItem="DJb-MC-qG7" secondAttribute="trailing" id="lvY-Gh-5jD"/>
                             <constraint firstItem="x8E-io-qZT" firstAttribute="centerY" secondItem="D4K-yj-Quj" secondAttribute="centerY" constant="18" id="mbz-n4-R3B"/>
                             <constraint firstItem="DJb-MC-qG7" firstAttribute="top" secondItem="Cga-qb-yk4" secondAttribute="top" id="npd-kS-Slh"/>
@@ -174,8 +244,13 @@
                         <viewLayoutGuide key="safeArea" id="Cga-qb-yk4"/>
                     </view>
                     <connections>
+                        <outlet property="noSearchHistoryLabel" destination="GG5-e3-nqB" id="J8n-ke-zqL"/>
+                        <outlet property="noSearchView" destination="khc-1W-xnG" id="CRp-Ih-x5u"/>
                         <outlet property="searchBar" destination="x8E-io-qZT" id="Qh7-Ud-z47"/>
+                        <outlet property="searchView" destination="pdT-gK-R7T" id="Zvn-mp-qvk"/>
                         <outlet property="tableView" destination="WU7-ad-uM8" id="Us5-GX-Ilr"/>
+                        <outlet property="viewRecentHistoryButton" destination="Wt2-Dq-kwS" id="jmi-EV-Rj1"/>
+                        <outlet property="wikiPediaDescriptionLabel" destination="r49-ye-1mP" id="YqT-YP-KAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y8-00-vPp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -256,5 +331,6 @@
     <resources>
         <image name="ic_back" width="73" height="55"/>
         <image name="ic_splash" width="323" height="556"/>
+        <image name="ic_wiki" width="144" height="60"/>
     </resources>
 </document>

@@ -29,7 +29,7 @@ class WikiSearchResultTableViewCell: UITableViewCell {
     
     func setCellData(wikiSearch: WikiSearchResult) {
         self.wikiSearchTitleLabel.text = wikiSearch.title ?? ""
-        self.wikiSearchDescriptionLabel.text = wikiSearch.description[0]
+        self.wikiSearchDescriptionLabel.text = wikiSearch.wikieDescription ?? ""
         if let imageView = self.wikiSearchImageView, let _ = wikiSearch.thumbnailUrl {
             let imageUrl = URL(string: wikiSearch.thumbnailUrl!)
             Nuke.loadImage(with: imageUrl!, into: imageView)

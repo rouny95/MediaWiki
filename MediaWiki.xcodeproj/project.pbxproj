@@ -18,6 +18,8 @@
 		8717810C21C80BC400DCC5D2 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717810B21C80BC400DCC5D2 /* ApiManager.swift */; };
 		8717810E21C80CB500DCC5D2 /* WikiSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717810D21C80CB500DCC5D2 /* WikiSearchViewController.swift */; };
 		8717811621C81B9A00DCC5D2 /* WikiSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */; };
+		8727D54F21CAAC20006A8686 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727D54E21CAAC20006A8686 /* UserDefaultUtil.swift */; };
+		8727D55321CABCF6006A8686 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727D55221CABCF6006A8686 /* Reachability.swift */; };
 		8B0E5062C4D047BD36A595C4 /* Pods_MediaWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641E0C3C6078FA9DA83D8FD /* Pods_MediaWiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +40,8 @@
 		8717810B21C80BC400DCC5D2 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		8717810D21C80CB500DCC5D2 /* WikiSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchViewController.swift; sourceTree = "<group>"; };
 		8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchResult.swift; sourceTree = "<group>"; };
+		8727D54E21CAAC20006A8686 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
+		8727D55221CABCF6006A8686 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +137,7 @@
 		8717810721C8071000DCC5D2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8727D54E21CAAC20006A8686 /* UserDefaultUtil.swift */,
 			);
 			name = Common;
 			path = MediaWiki/Common;
@@ -142,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				8717810B21C80BC400DCC5D2 /* ApiManager.swift */,
+				8727D55221CABCF6006A8686 /* Reachability.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -287,6 +293,8 @@
 				8717810E21C80CB500DCC5D2 /* WikiSearchViewController.swift in Sources */,
 				871780E821C7FAA300DCC5D2 /* AppDelegate.swift in Sources */,
 				8700B1C721C954DA000E5365 /* WikiSearchResultTableViewCell.swift in Sources */,
+				8727D55321CABCF6006A8686 /* Reachability.swift in Sources */,
+				8727D54F21CAAC20006A8686 /* UserDefaultUtil.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +443,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MediaWiki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -453,6 +462,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MediaWiki/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

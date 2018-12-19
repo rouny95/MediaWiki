@@ -12,6 +12,11 @@ class WikiSearchViewController: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noSearchView: UIView!
+    @IBOutlet weak var searchView: UIView!
+    @IBOutlet weak var wikiPediaDescriptionLabel: UILabel!
+    @IBOutlet weak var viewRecentHistoryButton: UIButton!
+    @IBOutlet weak var noSearchHistoryLabel: UILabel!
     
     var wikieSearchList = [WikiSearchResult]()
     var searchTerm: String = ""
@@ -20,6 +25,7 @@ class WikiSearchViewController: UIViewController {
         
         super.viewDidLoad()
         self.initalizeSearchBar()
+        self.setInitialscreen()
         tableView.delegate = self
         tableView.dataSource = self
         self.tableView.tableFooterView = UIView()
@@ -31,17 +37,39 @@ class WikiSearchViewController: UIViewController {
         searchBar.placeholder = "Search Wikipedia"
         self.searchBar.backgroundImage = UIImage()
         self.searchBar.showsCancelButton = false
+        if #available(iOS 9.0, *) {
+           UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+        }
+    }
+    
+    func setInitialscreen() {
+        
+        self.noSearchView.isHidden = false
+        self.wikieSearchList = []
+        if UserDefaultUtil.sharedInstance.fetchUserSearchHistory().count > 0 {
+            self.noSearchHistoryLabel.isHidden = true
+            self.viewRecentHistoryButton.isHidden = false
+        } else {
+            self.noSearchHistoryLabel.isHidden = false
+            self.viewRecentHistoryButton.isHidden = true
+        }
     }
     
     func updateUI() {
+        self.noSearchView.isHidden = true
         self.tableView.reloadData()
     }
     
+    @IBAction func viewRcenetHistoryClicked(_ sender: Any) {
+        self.wikieSearchList = UserDefaultUtil.sharedInstance.fetchUserSearchHistory()
+        self.updateUI()
+    }
     
     @objc func detailViewTapped(_ recognizer: UITapGestureRecognizer) {
         
         let tag = recognizer.view?.tag
         if let index = tag, let pageId = self.wikieSearchList[index].pageId {
+            UserDefaultUtil.sharedInstance.saveUserSearchHistory(self.wikieSearchList[index])
             let wikiPageUrl = "http://en.wikipedia.org/?curid=\(pageId)"
             let wikiDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "WikiDetailPageViewController") as! WikiDetailPageViewController
             wikiDetailVC.urlString = wikiPageUrl
@@ -103,6 +131,7 @@ extension WikiSearchViewController: UITableViewDelegate, UITableViewDataSource {
 extension WikiSearchViewController: UISearchBarDelegate {
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.noSearchView.isHidden = true
         self.searchBar.showsCancelButton = true
     }
     
@@ -112,6 +141,8 @@ extension WikiSearchViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         self.searchBar.text = nil
+        self.setInitialscreen()
+        self.tableView.reloadData()
         self.view.endEditing(true)
     }
     
