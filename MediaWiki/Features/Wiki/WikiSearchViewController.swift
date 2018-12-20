@@ -62,6 +62,7 @@ class WikiSearchViewController: UIViewController {
     
     @IBAction func viewRcenetHistoryClicked(_ sender: Any) {
         self.wikieSearchList = UserDefaultUtil.sharedInstance.fetchUserSearchHistory()
+        self.searchBar.showsCancelButton = true
         self.updateUI()
     }
     
@@ -70,7 +71,7 @@ class WikiSearchViewController: UIViewController {
         let tag = recognizer.view?.tag
         if let index = tag, let pageId = self.wikieSearchList[index].pageId {
             UserDefaultUtil.sharedInstance.saveUserSearchHistory(self.wikieSearchList[index])
-            let wikiPageUrl = "http://en.wikipedia.org/?curid=\(pageId)"
+            let wikiPageUrl = "http://en.wikipedia.org/?mobileaction=toggle_view_mobile&curid=\(pageId)"
             let wikiDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "WikiDetailPageViewController") as! WikiDetailPageViewController
             wikiDetailVC.urlString = wikiPageUrl
             self.present(wikiDetailVC, animated: true, completion: nil)

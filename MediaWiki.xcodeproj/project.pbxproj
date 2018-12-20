@@ -20,6 +20,7 @@
 		8717811621C81B9A00DCC5D2 /* WikiSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */; };
 		8727D54F21CAAC20006A8686 /* UserDefaultUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727D54E21CAAC20006A8686 /* UserDefaultUtil.swift */; };
 		8727D55321CABCF6006A8686 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727D55221CABCF6006A8686 /* Reachability.swift */; };
+		8727D56321CB82E5006A8686 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8727D56221CB82E5006A8686 /* BaseViewController.swift */; };
 		8B0E5062C4D047BD36A595C4 /* Pods_MediaWiki.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5641E0C3C6078FA9DA83D8FD /* Pods_MediaWiki.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		8717811521C81B9A00DCC5D2 /* WikiSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiSearchResult.swift; sourceTree = "<group>"; };
 		8727D54E21CAAC20006A8686 /* UserDefaultUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultUtil.swift; sourceTree = "<group>"; };
 		8727D55221CABCF6006A8686 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		8727D56221CB82E5006A8686 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		8717810421C8068400DCC5D2 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				8727D56221CB82E5006A8686 /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			files = (
 				8700B1C921C959E9000E5365 /* WikiDetailPageViewController.swift in Sources */,
 				8717811621C81B9A00DCC5D2 /* WikiSearchResult.swift in Sources */,
+				8727D56321CB82E5006A8686 /* BaseViewController.swift in Sources */,
 				8717810C21C80BC400DCC5D2 /* ApiManager.swift in Sources */,
 				8717810A21C8081300DCC5D2 /* SplashViewController.swift in Sources */,
 				871780F021C7FAA300DCC5D2 /* MediaWiki.xcdatamodeld in Sources */,

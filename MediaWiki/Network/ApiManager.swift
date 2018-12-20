@@ -29,11 +29,22 @@ class ApiManager {
 
     func getSearchListWithSearchTerm(_ searchTerm: String, completion : @escaping ApiManagerResponse, errorHandler : @escaping ApiManagerError) {
         
-        let url = "\(BASE_URL)api.php?action=query&format=json&prop=pageimages%7Cpageterms%7Cinfo&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=100&pilimit=10&wbptterms=description&gpssearch=\(searchTerm)"
-    
-        print(url)
+        let parameters : [ String : String] = [
+            
+            "action": "query",
+            "format": "json",
+            "prop": "pageimages|pageterms|info",
+            "generator": "prefixsearch",
+            "redirects": "1",
+            "formatversion": "2",
+            "piprop": "thumbnail",
+            "pithumbsize": "100",
+            "pilimit": "15",
+            "wbptterms": "description",
+            "gpssearch": searchTerm
+        ]
         
-        Alamofire.request(url, method: .get , parameters: nil, encoding: JSONEncoding.default , headers: [:])
+        Alamofire.request("\(BASE_URL)api.php?", method: .get , parameters: parameters, encoding: URLEncoding.default , headers: ["Content-Type" : "application/x-www-form-urlencoded"])
 
             .responseJSON {
                 (response) -> Void in

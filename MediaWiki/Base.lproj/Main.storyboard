@@ -177,7 +177,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="gxf-0X-yUW"/>
                                         </constraints>
-                                        <mutableString key="text">Wikipedia is a multilingual, web-based, free encyclopedia based on a model of openly editable and viewable content, a wiki. It is the largest and most popular general reference work on the World Wide Web and is one of the most popular websites by Alexa rank.</mutableString>
+                                        <string key="text">Wikipedia is a multilingual, web-based, free encyclopedia based on a model of openly editable and viewable content, a wiki. It is the largest and most popular general reference work on the World Wide Web and is one of the most popular websites by Alexa rank.</string>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -359,15 +359,36 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJ1-1H-qO3">
-                                <rect key="frame" x="0.0" y="88" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="2"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="dja-bg-IWc"/>
+                                    <constraint firstAttribute="height" constant="2" id="dja-bg-IWc"/>
                                 </constraints>
                             </view>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9IG-Nq-ZTM">
+                                <rect key="frame" x="0.0" y="88" width="375" height="2"/>
+                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </progressView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iaI-Sq-XBA">
-                                <rect key="frame" x="0.0" y="89" width="375" height="689"/>
+                                <rect key="frame" x="0.0" y="90" width="375" height="688"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YcA-go-lIP">
+                                <rect key="frame" x="0.0" y="90" width="375" height="688"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_error" translatesAutoresizingMaskIntoConstraints="NO" id="Sif-Wf-ypg">
+                                        <rect key="frame" x="87.666666666666686" y="244" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="60n-hi-qId"/>
+                                            <constraint firstAttribute="height" constant="200" id="Mo7-0N-z74"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Sif-Wf-ypg" firstAttribute="centerY" secondItem="YcA-go-lIP" secondAttribute="centerY" id="Pv2-fk-pjs"/>
+                                    <constraint firstItem="Sif-Wf-ypg" firstAttribute="centerX" secondItem="YcA-go-lIP" secondAttribute="centerX" id="h9b-yp-j1E"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -375,21 +396,31 @@
                             <constraint firstItem="XYU-uG-9M6" firstAttribute="top" secondItem="rhQ-sC-eLw" secondAttribute="top" id="2IL-7C-cMn"/>
                             <constraint firstItem="Yis-lK-m7K" firstAttribute="trailing" secondItem="iaI-Sq-XBA" secondAttribute="trailing" id="2Nn-V2-FE4"/>
                             <constraint firstItem="Yis-lK-m7K" firstAttribute="bottom" secondItem="iaI-Sq-XBA" secondAttribute="bottom" id="5fx-un-NL8"/>
+                            <constraint firstItem="YcA-go-lIP" firstAttribute="top" secondItem="iaI-Sq-XBA" secondAttribute="top" id="6ZL-6f-Gx5"/>
+                            <constraint firstItem="9IG-Nq-ZTM" firstAttribute="leading" secondItem="bJ1-1H-qO3" secondAttribute="leading" id="6dT-lD-caA"/>
+                            <constraint firstItem="YcA-go-lIP" firstAttribute="leading" secondItem="iaI-Sq-XBA" secondAttribute="leading" id="7Ol-rf-NOT"/>
                             <constraint firstItem="soP-Ih-DYN" firstAttribute="top" secondItem="Yis-lK-m7K" secondAttribute="top" id="7v6-pa-XTD"/>
                             <constraint firstItem="XYU-uG-9M6" firstAttribute="leading" secondItem="Yis-lK-m7K" secondAttribute="leading" id="Dfm-FF-r4Q"/>
                             <constraint firstItem="XYU-uG-9M6" firstAttribute="bottom" secondItem="soP-Ih-DYN" secondAttribute="bottom" id="HBK-Oo-7nK"/>
                             <constraint firstItem="soP-Ih-DYN" firstAttribute="leading" secondItem="Yis-lK-m7K" secondAttribute="leading" id="ISN-p2-ucF"/>
+                            <constraint firstItem="9IG-Nq-ZTM" firstAttribute="top" secondItem="bJ1-1H-qO3" secondAttribute="top" id="KLA-es-9Gl"/>
                             <constraint firstItem="bJ1-1H-qO3" firstAttribute="top" secondItem="XYU-uG-9M6" secondAttribute="bottom" id="Lqb-sf-5MH"/>
                             <constraint firstItem="soP-Ih-DYN" firstAttribute="trailing" secondItem="Yis-lK-m7K" secondAttribute="trailing" id="PEY-SU-kDg"/>
                             <constraint firstItem="iaI-Sq-XBA" firstAttribute="leading" secondItem="Yis-lK-m7K" secondAttribute="leading" id="PdH-Kh-ax3"/>
                             <constraint firstItem="iaI-Sq-XBA" firstAttribute="top" secondItem="bJ1-1H-qO3" secondAttribute="bottom" id="RIK-Pr-cfx"/>
+                            <constraint firstItem="YcA-go-lIP" firstAttribute="trailing" secondItem="iaI-Sq-XBA" secondAttribute="trailing" id="XmR-ql-UQW"/>
                             <constraint firstItem="XYU-uG-9M6" firstAttribute="trailing" secondItem="Yis-lK-m7K" secondAttribute="trailing" id="ZPg-Ut-Lzq"/>
+                            <constraint firstItem="9IG-Nq-ZTM" firstAttribute="trailing" secondItem="bJ1-1H-qO3" secondAttribute="trailing" id="hNz-oi-9EB"/>
                             <constraint firstItem="bJ1-1H-qO3" firstAttribute="trailing" secondItem="Yis-lK-m7K" secondAttribute="trailing" id="jKc-6J-jwk"/>
                             <constraint firstItem="bJ1-1H-qO3" firstAttribute="leading" secondItem="Yis-lK-m7K" secondAttribute="leading" id="jnp-3R-leY"/>
+                            <constraint firstItem="YcA-go-lIP" firstAttribute="bottom" secondItem="iaI-Sq-XBA" secondAttribute="bottom" id="s3p-yk-kMJ"/>
+                            <constraint firstItem="9IG-Nq-ZTM" firstAttribute="height" secondItem="bJ1-1H-qO3" secondAttribute="height" id="y88-QD-Sat"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Yis-lK-m7K"/>
                     </view>
                     <connections>
+                        <outlet property="errorView" destination="YcA-go-lIP" id="QRn-9k-xaX"/>
+                        <outlet property="progressView" destination="9IG-Nq-ZTM" id="RFE-ik-Pl4"/>
                         <outlet property="webviewContainer" destination="iaI-Sq-XBA" id="8Yn-eG-L7W"/>
                     </connections>
                 </viewController>
@@ -400,6 +431,7 @@
     </scenes>
     <resources>
         <image name="ic_back" width="144" height="144"/>
+        <image name="ic_error" width="373" height="219"/>
         <image name="ic_splash" width="323" height="556"/>
         <image name="ic_wiki" width="144" height="60"/>
         <image name="ic_wiki_logo" width="160" height="160"/>

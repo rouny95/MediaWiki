@@ -9,9 +9,11 @@
 import UIKit
 import WebKit
 
-class WikiDetailPageViewController: UIViewController, WKNavigationDelegate {
+class WikiDetailPageViewController: BaseViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webviewContainer: UIView!
+    @IBOutlet weak var progressView: UIProgressView!
+    @IBOutlet weak var errorView: UIView!
     
     var webView: WKWebView!
     var urlString: String?
@@ -19,12 +21,26 @@ class WikiDetailPageViewController: UIViewController, WKNavigationDelegate {
     override func loadView() {
         super.loadView()
         self.setWKWebViewConfiguration()
+        self.webView.addObserver(self, forKeyPath: "estimatedProgress", options: .new, context: nil)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadWKWebView()
+        if Reachability.isConnectedToNetwork() {
+            self.errorView.isHidden = true
+            self.loadWKWebView()
+        } else {
+            self.errorView.isHidden = false
+            super.showToast(message: "No Internet Connection")
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "estimatedProgress" {
+            print(self.webView.estimatedProgress);
+            self.progressView.progress = Float(self.webView.estimatedProgress);
+        }
     }
     
     func setWKWebViewConfiguration() {
@@ -39,9 +55,13 @@ class WikiDetailPageViewController: UIViewController, WKNavigationDelegate {
     func loadWKWebView() {
         if let urlString = self.urlString {
             guard let url = URL(string: urlString) else {
+                self.errorView.isHidden = false
                 return
             }
+            self.errorView.isHidden = true
             webView.load(URLRequest(url: url))
+        } else {
+            self.errorView.isHidden = false
         }
     }
     

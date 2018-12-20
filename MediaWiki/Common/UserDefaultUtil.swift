@@ -25,9 +25,9 @@ class UserDefaultUtil: NSObject {
         if (savedHistoryList.contains { $0.pageId! == history.pageId!}) == false {
             if savedHistoryList.count >= 10 {
                 savedHistoryList.removeLast()
-                savedHistoryList.append(history)
+                savedHistoryList.insert(history, at: 0)
             } else {
-                savedHistoryList.append(history)
+                savedHistoryList.insert(history, at: 0)
             }
             userDefault.removeObject(forKey: "mediWikiSeachHistory")
             let archivedData = NSKeyedArchiver.archivedData(withRootObject: savedHistoryList)
