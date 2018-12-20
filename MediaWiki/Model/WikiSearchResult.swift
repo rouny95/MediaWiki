@@ -10,11 +10,11 @@ import Foundation
 
 class WikiSearchResult: NSObject, NSCoding {
     
-    var pageId: Int?
-    var title: String?
-    var thumbnailUrl: String?
-    var wikiPageUrl: String?
-    var wikieDescription: String?
+    var pageId: Int? /** wiki page id **/
+    var title: String? /** wiki page title **/
+    var thumbnailUrl: String? /** wiki page icon **/
+    var wikiPageUrl: String? /** wiki detail page url **/
+    var wikieDescription: String? /** wiki detail page description **/
     
     
     init?(dictionary : NSDictionary) {
@@ -34,14 +34,6 @@ class WikiSearchResult: NSObject, NSCoding {
         if let _ = dictionary.object(forKey: "fullurl") {
             self.wikiPageUrl = (dictionary.object(forKey: "fullurl") as! String)
         }
-//        if let terms = dictionary.object(forKey: "terms") {
-//            self.wikieDescription = []
-//            let descriptions: NSArray = (terms as AnyObject).object(forKey: "description")  as! NSArray
-//            for eachDescription in descriptions {
-//                let descriptionObj = eachDescription as! String
-//                self.wikieDescription.append(descriptionObj)
-//            }
-//        }
         
         if let terms = dictionary.object(forKey: "terms") {
             let descriptions: NSArray = (terms as AnyObject).object(forKey: "description")  as! NSArray

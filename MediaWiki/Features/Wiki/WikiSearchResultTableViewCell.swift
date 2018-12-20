@@ -27,6 +27,9 @@ class WikiSearchResultTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    /// Set Cell Data
+    ///
+    /// - Parameter wikiSearch: WikiSearchResult Object
     func setCellData(wikiSearch: WikiSearchResult) {
         self.wikiSearchTitleLabel.text = wikiSearch.title ?? ""
         self.wikiSearchDescriptionLabel.text = wikiSearch.wikieDescription ?? ""

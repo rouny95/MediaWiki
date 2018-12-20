@@ -17,6 +17,9 @@ class UserDefaultUtil: NSObject {
         return Static.instance
     }
     
+    /// Save User Visited Page history for last 10 count
+    ///
+    /// - Parameter history: WikiSearchResult Object
     func saveUserSearchHistory(_ history: WikiSearchResult) {
         
         let userDefault = UserDefaults.standard
@@ -36,6 +39,9 @@ class UserDefaultUtil: NSObject {
         }
     }
     
+    /// Fetch the saved Seahced history
+    ///
+    /// - Returns: Returns array of WikiSearchResult
     func fetchUserSearchHistory() -> [WikiSearchResult] {
         
         let userDefault = UserDefaults.standard

@@ -24,9 +24,10 @@ class ApiManager {
     }
     
     
-//    https://en.wikipedia.org//w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&generator=prefixsearch&redirects=1&formatversion=2&piprop=thumbnail&pithumbsize=50&pilimit=10&wbptterms=description&gpssearch=Sachin+T&gpslimit=10
-    
-
+    /// Get rquest to fetch topics from wikipedia w.r.t keyword
+    ///
+    /// - Parameters:
+    ///   - searchTerm: Search key
     func getSearchListWithSearchTerm(_ searchTerm: String, completion : @escaping ApiManagerResponse, errorHandler : @escaping ApiManagerError) {
         
         let parameters : [ String : String] = [
@@ -45,7 +46,7 @@ class ApiManager {
         ]
         
         Alamofire.request("\(BASE_URL)api.php?", method: .get , parameters: parameters, encoding: URLEncoding.default , headers: ["Content-Type" : "application/x-www-form-urlencoded"])
-
+            
             .responseJSON {
                 (response) -> Void in
                 switch response.result {

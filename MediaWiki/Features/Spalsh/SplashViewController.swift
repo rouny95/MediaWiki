@@ -9,10 +9,11 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    
+    //MARK: - LifeCycle Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -20,7 +21,7 @@ class SplashViewController: UIViewController {
         self.presentWikiSearchVC()
     }
     
-
+    
     //MARK: - Navigation Methods
     
     /// Presents Movie List View Controller
@@ -29,5 +30,5 @@ class SplashViewController: UIViewController {
         let wikiSearchVC = self.storyboard?.instantiateViewController(withIdentifier: "WikiSearchViewController") as! WikiSearchViewController
         self.present(wikiSearchVC, animated: true, completion: nil)
     }
-
+    
 }

@@ -9,10 +9,10 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -39,5 +39,20 @@ class BaseViewController: UIViewController {
             toastLbl.removeFromSuperview()
         }
     }
-
+    
+    //MARK: - Alert Methods
+    /// Show Alert
+    ///
+    /// - Parameters:
+    ///   - title: Title of Alert
+    ///   - message: Alert Description
+    func showAlertMessage(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
