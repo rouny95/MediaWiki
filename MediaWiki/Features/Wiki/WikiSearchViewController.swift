@@ -69,8 +69,10 @@ class WikiSearchViewController: BaseViewController {
     
     /// Update the UI and reload tableview
     func updateUI() {
+        
         self.noSearchView.isHidden = true
         self.tableView.reloadData()
+        super.stopAnimating()
     }
     
     
@@ -134,22 +136,27 @@ class WikiSearchViewController: BaseViewController {
     
     /// API call to fetch search result from wiki
     func getWikiSearchresults() {
-        
-        if self.searchTerm != "" {
-            ApiManager.sharedInstance.getSearchListWithSearchTerm(self.searchTerm, completion: {(response) -> Void in
-                if let queryDicitionary = (response.object(forKey: "query") as? AnyObject) {
-                    self.wikieSearchList = []
-                    if let pages: [NSDictionary] = (queryDicitionary["pages"] as? [NSDictionary]) {
-                        for page in pages {
-                            self.wikieSearchList.append(WikiSearchResult(dictionary: page)!)
+        if Reachability.isConnectedToNetwork() {
+            if self.searchTerm != "" {
+                super.startAnimating()
+                ApiManager.sharedInstance.getSearchListWithSearchTerm(self.searchTerm, completion: {(response) -> Void in
+                    if let queryDicitionary = (response.object(forKey: "query") as? AnyObject) {
+                        self.wikieSearchList = []
+                        if let pages: [NSDictionary] = (queryDicitionary["pages"] as? [NSDictionary]) {
+                            for page in pages {
+                                self.wikieSearchList.append(WikiSearchResult(dictionary: page)!)
+                            }
                         }
                     }
-                }
-                DispatchQueue.main.async {
-                    self.updateUI()
-                }
-            }, errorHandler: {(error) -> Void in
-            })
+                    DispatchQueue.main.async {
+                        self.updateUI()
+                    }
+                }, errorHandler: {(error) -> Void in
+                    super.stopAnimating()
+                })
+            }
+        } else {
+            super.showToast(message: "No Internet Connection")
         }
     }
     
